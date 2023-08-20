@@ -22,8 +22,12 @@ kotlin {
         framework {
             baseName = "shared"
             isStatic = true
+            //export("dev.icerock.moko:mvvm-core:0.16.1")
+            //export("dev.icerock.moko:mvvm-compose:0.16.1")
         }
         extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
+
+        pod("FirebaseFirestore", linkOnly = true)
     }
 
     sourceSets {

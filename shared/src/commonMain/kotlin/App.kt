@@ -9,6 +9,7 @@ import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import recipesList.ListViewModel
+import recipesList.UiModel
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
@@ -21,7 +22,7 @@ fun App() {
 
 @Composable
 fun RecipesPage(viewModel: ListViewModel) {
-    val uiModel by viewModel.uiModel.collectAsState()
+    val uiModel by viewModel.uiModel.collectAsState(initial = UiModel(emptyList()))
     LazyColumn {
         items(uiModel.recipes) {
             Text(it.title)

@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.application")
     id("org.jetbrains.compose")
+    id("com.google.gms.google-services")
 }
 
 kotlin {
@@ -17,12 +18,12 @@ kotlin {
 
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "com.myapplication"
+    namespace = "com.thomasm.bonapp"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        applicationId = "com.myapplication.MyApplication"
+        applicationId = "com.thomasm.bonapp"
         minSdk = (findProperty("android.minSdk") as String).toInt()
         targetSdk = (findProperty("android.targetSdk") as String).toInt()
         versionCode = 1

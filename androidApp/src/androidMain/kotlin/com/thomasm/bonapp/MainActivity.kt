@@ -1,4 +1,4 @@
-package com.myapplication
+package com.thomasm.bonapp
 
 import MainView
 import android.os.Bundle
